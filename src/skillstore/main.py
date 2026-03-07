@@ -6,6 +6,7 @@ from pathlib import Path
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import PlainTextResponse
 
+from skillstore.fake_api import router as fake_api_router
 from skillstore.models import SkillstoreResponse
 from skillstore.skill_loader import SkillLoader
 
@@ -15,11 +16,8 @@ app = FastAPI(
     version="0.1.0",
 )
 
-# Include fake gym API only in development/testing mode
-if os.environ.get("SKILLSTORE_ENABLE_FAKE_API", "").lower() in ("1", "true", "yes"):
-    from skillstore.fake_api import router as fake_api_router
-
-    app.include_router(fake_api_router)
+# Include fake gym API for testing/demo
+app.include_router(fake_api_router)
 
 # Skills directory - configurable via SKILLSTORE_SKILLS_DIR env var
 # Defaults to ./skills relative to cwd for development

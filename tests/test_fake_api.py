@@ -4,7 +4,8 @@ import pytest
 from fastapi import FastAPI
 from fastapi.testclient import TestClient
 
-from skillstore.fake_api import reset_bookings, router as fake_api_router
+from skillstore.fake_api import reset_bookings
+from skillstore.fake_api import router as fake_api_router
 
 # Create a test-only app with fake API enabled
 _test_app = FastAPI()
