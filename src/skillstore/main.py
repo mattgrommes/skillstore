@@ -15,6 +15,12 @@ app = FastAPI(
     version="0.1.0",
 )
 
+# Include fake gym API only in development/testing mode
+if os.environ.get("SKILLSTORE_ENABLE_FAKE_API", "").lower() in ("1", "true", "yes"):
+    from skillstore.fake_api import router as fake_api_router
+
+    app.include_router(fake_api_router)
+
 # Skills directory - configurable via SKILLSTORE_SKILLS_DIR env var
 # Defaults to ./skills relative to cwd for development
 SKILLS_DIR = Path(os.environ.get("SKILLSTORE_SKILLS_DIR", "./skills"))
