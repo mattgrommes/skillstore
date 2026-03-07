@@ -59,12 +59,12 @@ async def list_skills(request: Request) -> SkillstoreResponse:
 async def get_skill(skill_id: str) -> str:
     """Download a specific skill by ID.
 
-    Returns the full markdown content of the skill (without frontmatter).
+    Returns the full raw markdown content of the skill including frontmatter.
     """
     loader = get_loader()
-    skill = loader.load_one(skill_id)
+    content = loader.load_raw(skill_id)
 
-    if not skill:
+    if not content:
         raise HTTPException(status_code=404, detail=f"Skill '{skill_id}' not found")
 
-    return skill.content
+    return content

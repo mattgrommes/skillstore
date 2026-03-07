@@ -75,9 +75,10 @@ The response will be markdown instructions you can follow.
 ### Step 4: Save the skill locally
 
 Save the downloaded skill to your local skills directory for future use:
+Prefer using curl or wget download flag to download the file.
 
 ```
-~/.copilot/skills/{domain}/{skill_id}/SKILL.md
+~/.copilot/skills/{domain}-{skill_id}/SKILL.md
 ```
 
 **Example path:**

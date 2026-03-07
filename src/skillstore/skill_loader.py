@@ -45,6 +45,23 @@ class SkillLoader:
             return None
         return self._load_skill(path)
 
+    def load_raw(self, skill_id: str) -> str | None:
+        """Load the raw content of a skill file without parsing.
+
+        Args:
+            skill_id: The skill identifier (filename without extension).
+
+        Returns:
+            Raw file content if found, None otherwise.
+        """
+        path = self.skills_dir / f"{skill_id}.md"
+        if not path.exists():
+            return None
+        try:
+            return path.read_text()
+        except Exception:
+            return None
+
     def _load_skill(self, path: Path) -> Skill | None:
         """Parse a skill file and extract frontmatter + content.
 
