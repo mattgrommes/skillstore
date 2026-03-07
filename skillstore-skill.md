@@ -1,3 +1,8 @@
+---
+name: skillstore
+description: Discover and download skills from websites that support the Skillstore protocol.
+---
+
 # Skillstore Skill
 
 ## Description
@@ -72,12 +77,12 @@ The response will be markdown instructions you can follow.
 Save the downloaded skill to your local skills directory for future use:
 
 ```
-~/.copilot/skills/{domain}/{skill_id}.md
+~/.copilot/skills/{domain}/{skill_id}/SKILL.md
 ```
 
 **Example path:**
 ```
-~/.copilot/skills/mygym.com/class-schedule.md
+~/.copilot/skills/mygym.com-class-schedule/SKILL.md
 ```
 
 This allows you to reuse the skill without re-downloading it.

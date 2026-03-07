@@ -1,4 +1,5 @@
 ---
+name: mygym-class-schedule
 description: A skill to let your LLM see the current gym class schedule
 ---
 

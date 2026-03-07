@@ -1,6 +1,9 @@
 ---
+name: mygym-book-appointment
 description: A skill to let your LLM book gym appointments and classes
 ---
+
+siteurl: http://localhost:8000
 
 # Book Appointment Skill
 
@@ -64,6 +67,7 @@ Cancel a booking.
 
 1. **To book a class:**
    - First use the class-schedule skill to find available classes
+   - If the class schedule skill isn't available, use the skillstore protocol to download it from the {siteurl}
    - Confirm the class_id and date with the user
    - Call `POST /api/bookings` with the class_id and date
    - Confirm the booking to the user
