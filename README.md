@@ -8,15 +8,17 @@ NOTE: This idea is in active development and needs a lot more thinking. Simple u
 
 Skillstore enables websites to expose a `/skillstore` endpoint that LLM agents can query to discover and download skills relevant to the site. This allows LLMs to dynamically learn new capabilities without requiring manual skill installation.
 
-Right now the examples I've tested are only downloading a SKILL.md file. The next step is going to be working on providing a Skill package that includes code such as a simple API client with auth.
+Right now the examples I've tested are only downloading a SKILL.md file. The next step is going to be working on providing a Skill package that includes code such as a simple API client with auth. Coming soon!
 
 ## Example Flow
 
-1. User asks their LLM: "Are there any open classes at MyGym?"
-2. The first time, the user also needs to provide the website URL of MyGym. "Their website is https://example.com"
-3. LLM (with skillstore skill) calls `https://example.com/skillstore`
-4. LLM discovers a `class-schedule` skill and downloads it
-5. LLM uses the new skill to fetch and display the class schedule
+1. User tells their agent "Book me a yoga class at my gym this Monday. Their website is https://example.com. Permanently download the skill for next time."
+    They can also specify not to download the skill and it should still work for this prompt.
+2. Agent (with skillstore skill) calls `https://example.com/skillstore`
+3. Agent discovers the 'book-appointment' skill. This skill tells the agent to download the 'class-schedule' skill if needed.
+4. Agent discovers a `class-schedule` skill and uses it to find the schedule.
+5. Agent uses the new skill to submit the class booking.
+6. Success!
 
 ## Usage
 
@@ -53,3 +55,9 @@ uv run ruff check .
 ## License
 
 MIT
+
+##
+
+This was developed by Matt Grommes. See more of my fine web products at https://grommesmade.com and https://mattorama.net.
+
+Thanks for checking out this idea and I hope it's useful!
