@@ -1,6 +1,8 @@
 # Skillstore Protocol
 
-An LLM skill for bringing in discoverable, downloadable "skills" (markdown instructions) that teach LLMs how to interact with a site's APIs. Also a sample server that show the endpoints a site would use to provide its end of the protocol.
+The Skillstore protocol is an idea for a simple standardized way of providing and discovering downloadable "skills" (markdown instructions) that teach LLMs how to interact with a site. This repo provides an example Skill and a sample server that shows the endpoints needed.
+
+The skills can also provide other options as well such as providing contact info and possibly directing the LLM how to navigate a website that doesn't have an API. There's lot to discover about this idea.
 
 NOTE: This idea is in active development and needs a lot more thinking. Simple use cases work though and I believe the idea is sound.
 
@@ -14,8 +16,8 @@ Right now the examples I've tested are only downloading a SKILL.md file. The nex
 
 1. User tells their agent "Book me a yoga class at my gym this Monday. Their website is https://example.com. Permanently download the skill for next time."
     They can also specify not to download the skill and it should still work for this prompt.
-2. Agent (with skillstore skill) calls `https://example.com/skillstore`
-3. Agent discovers the 'book-appointment' skill. This skill tells the agent to download the 'class-schedule' skill if needed.
+2. Agent (with skillstore skill) calls `https://example.com/skillstore`and retrieves a list of available skills.
+3. Agent discovers the 'book-appointment' skill. This skill tells the agent to download the `class-schedule` skill if needed.
 4. Agent discovers a `class-schedule` skill and uses it to find the schedule.
 5. Agent uses the new skill to submit the class booking.
 6. Success!
