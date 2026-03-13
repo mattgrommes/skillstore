@@ -28,9 +28,9 @@ On the user side, just download and install the skillstore-skill.
 
 On the server side, you just have to provide a /skillstore endpoint which returns json with a list of skills availble. You also need to have endpoints for each skill. Until more documentation is available, see below and the sample server.
 
-### Running the test/sample Server
+## Running the test/sample Server
 
-# Run the server
+### Run the server
 
 ```bash
 uv run uvicorn skillstore.main:app --reload
