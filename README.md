@@ -11,7 +11,7 @@ Right now the examples I've tested are only downloading a SKILL.md file. The nex
 ## Example Flow
 
 1. User tells their agent "Book me a yoga class at my gym this Monday. Their website is https://example.com. Permanently download the skill for next time."
-    They can also specify not to download the skill and it should still work for this prompt.
+    - They can also specify not to download the skill and it should still work for this prompt.
 2. Agent (with skillstore skill) calls `https://example.com/skillstore`and retrieves a list of available skills.
 3. Agent discovers the 'book-appointment' skill. This skill tells the agent to download the `class-schedule` skill if needed.
 4. Agent discovers a `class-schedule` skill and uses it to find the schedule.
