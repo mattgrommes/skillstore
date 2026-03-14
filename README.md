@@ -1,14 +1,10 @@
 # Skillstore Protocol
 
-The Skillstore protocol is an idea for a simple standardized way of providing and discovering downloadable "skills" (markdown instructions) that teach LLMs how to interact with a site. This repo provides an example Skill and a sample server that shows the endpoints needed.
+The Skillstore protocol is an idea for a simple standardized way of providing and discovering downloadable "skills" (markdown instructions) that teach LLMs how to interact with a site. This allows LLMs to dynamically learn new capabilities without requiring manual skill installation. This repo provides an example Skill and a sample server that shows the endpoints needed. 
 
 The skills can also provide other options as well such as providing contact info and possibly directing the LLM how to navigate a website that doesn't have an API. There's lot to discover about this idea.
 
-NOTE: This idea is in active development and needs a lot more thinking. Simple use cases work though and I believe the idea is sound.
-
-## Details
-
-Skillstore enables websites to expose a `/skillstore` endpoint that LLM agents can query to discover and download skills relevant to the site. This allows LLMs to dynamically learn new capabilities without requiring manual skill installation.
+This idea is in active development and needs a lot more thinking. Simple use cases work though and I believe the idea is sound.
 
 Right now the examples I've tested are only downloading a SKILL.md file. The next step is going to be working on providing a Skill package that includes code such as a simple API client with auth. Coming soon!
 
